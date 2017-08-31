@@ -1,8 +1,8 @@
-<h1>Your name is..</h1>
+<h1>My name is... <%= @name %></h1>
 
-<h2><%= @name %></h2>
+<% if @name[0].upcase == "A" %>
+  <h2>Hey! Your name starts with an "A"</h2>
+<% end %>
 
-<h3><%= @name_letter %></h3>
 
-<h4><%= @number_game %></h4>
-  
+

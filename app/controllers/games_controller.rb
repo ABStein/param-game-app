@@ -1,23 +1,21 @@
 class GamesController < ApplicationController
-  def name_game 
-    @name = params[:your_name_is].upcase
-    @name_letter = @name.chr == "A"      #ask josh how to include an if statement
-    @number_game = params[:guess_number]
-    @number_answer = params[36]
+  def name_game
+    @name = params[:my_name]
   end
 
   def guess_query
-    winnning_number = 42
-    @guess = params[:wildcard].to_s
+    winning_number = 42
+    @guess = params[:number].to_i
 
-    if @guess > winnning_number
-      @message = 'too high'
-    elsif @guess < winnning_number
-      @message = 'too low'
-    else 
-      @message = 'a winner!'
+    if @guess > winning_number
+      @message = "too high."
+    elsif @guess < winning_number
+      @message = "too low."
+    else
+      @message = "a winner!!!" 
     end
   end
+end
 
   def guess_url
     winnning_number = 42
@@ -31,4 +29,3 @@ class GamesController < ApplicationController
       @message = 'a winner!'
     end
   end
-end
