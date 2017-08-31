@@ -8,6 +8,19 @@ class GamesController < ApplicationController
 
   def guess_query
     winnning_number = 42
+    @guess = params[:wildcard].to_s
+
+    if @guess > winnning_number
+      @message = 'too high'
+    elsif @guess < winnning_number
+      @message = 'too low'
+    else 
+      @message = 'a winner!'
+    end
+  end
+
+  def guess_url
+    winnning_number = 42
     @guess = params[:number].to_i
 
     if @guess > winnning_number
